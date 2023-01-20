@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TodosService} from "../../services/todos.service";
 import {Observable} from "rxjs";
-import { Todo } from '../../models/todos.models';
+import {Todo} from '../../models/todos.models';
 
 @Component({
   selector: 'tl-todos',
@@ -9,13 +9,20 @@ import { Todo } from '../../models/todos.models';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
-  constructor(private todosService: TodosService) {}
+  constructor(private todosService: TodosService) {
+  }
 
   todos$?: Observable<Todo[]>
+  todoTitle = ''
 
   ngOnInit() {
     //subs
     this.todos$ = this.todosService.todos$
     this.todosService.getTodos()
+  }
+
+  addTodoHandler() {
+    this.todosService.addTodo(this.todoTitle)
+    this.todoTitle = ''
   }
 }
