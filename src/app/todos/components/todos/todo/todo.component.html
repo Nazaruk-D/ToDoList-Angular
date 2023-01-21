@@ -1,6 +1,9 @@
 <div class="box">
   <div class="todoHeader">
-    {{todo.title}}
+    <input *ngIf="isEditMode; else content" type="text" [(ngModel)]="newTitle" (blur)="editTitleHandler()">
+    <ng-template #content>
+      <p (dblclick)="activateEditModeHandler()"> {{todo.title}} </p>
+    </ng-template>
     <button (click)="removeTodoHandler()">delete</button>
   </div>
 </div>
