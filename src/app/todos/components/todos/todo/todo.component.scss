@@ -7,3 +7,10 @@
   flex-direction: column;
   //gap: 100px;
 }
+
+.todoHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
