@@ -37,4 +37,16 @@ export class TasksService {
       }))
       .subscribe((tasks) => this.tasks$.next(tasks))
   }
+
+  removeTask(data: {todoId: string; taskId: string}) {
+    this.http.delete<CommonResponse>(`${environment.baseURL}/todo-lists/${data.todoId}/tasks/${data.taskId}`)
+      .pipe(map((res) => {
+        const stateTasks = this.tasks$.getValue()
+        const tasksForTodo = stateTasks[data.todoId]
+        const filteredTasks = tasksForTodo.filter( t => t.id !== data.taskId)
+        stateTasks[data.todoId] = filteredTasks
+        return stateTasks
+      }))
+      .subscribe((tasks) => this.tasks$.next(tasks))
+  }
 }
