@@ -1,4 +1,4 @@
-.box{
+.box {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,3 +8,15 @@
 .taskContent {
   display: flex;
 }
+
+.completedTask {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.input {
+  width: 100%;
+  border: 1px dashed black;
+
+}
+

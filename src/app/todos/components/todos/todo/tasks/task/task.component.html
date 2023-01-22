@@ -1,7 +1,7 @@
 <div class="box">
-  <div class="taskContent">
+  <div class="taskContent" [ngClass]="{'completedTask': task.status === taskStatusEnum.completed}">
     <input type="checkbox" (click)="changeTaskStatusHandler($event)" [checked]="task.status === taskStatusEnum.completed">
-    <input *ngIf="editMode; else content" type="text" [(ngModel)]="newTitle" (blur)="editTitleHandler()">
+    <input *ngIf="editMode; else content" type="text" [(ngModel)]="newTitle" (blur)="editTitleHandler()" class="input">
     <ng-template #content>
       <p (dblclick)="activateEditModeHandler()">{{task.title}}</p>
     </ng-template>
