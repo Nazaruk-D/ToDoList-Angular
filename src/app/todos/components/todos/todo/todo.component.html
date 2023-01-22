@@ -7,4 +7,6 @@
     <button (click)="removeTodoHandler()">delete</button>
   </div>
   <tl-tasks [todoId]="todo.id"></tl-tasks>
+  <tl-todo-filters></tl-todo-filters>
+  <tl-todo-footer [addedDate]="todo.addedDate"></tl-todo-footer>
 </div>

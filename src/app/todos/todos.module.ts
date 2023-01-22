@@ -7,6 +7,8 @@ import { TodoComponent } from './components/todos/todo/todo.component';
 import {FormsModule} from "@angular/forms";
 import { TasksComponent } from './components/todos/todo/tasks/tasks.component';
 import { TaskComponent } from './components/todos/todo/tasks/task/task.component';
+import { TodoFiltersComponent } from './components/todos/todo/todo-filters/todo-filters.component';
+import { TodoFooterComponent } from './components/todos/todo/todo-footer/todo-footer.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { TaskComponent } from './components/todos/todo/tasks/task/task.component
     TodosComponent,
     TodoComponent,
     TasksComponent,
-    TaskComponent
+    TaskComponent,
+    TodoFiltersComponent,
+    TodoFooterComponent
   ],
   imports: [
     CommonModule,
