@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {FilterType} from "../../../../models/todos.models";
 
 @Component({
   selector: 'tl-todo-filters',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo-filters.component.scss']
 })
 export class TodoFiltersComponent {
+  @Input() filter!: FilterType
+  @Output() changeFilterEvent = new EventEmitter<FilterType>()
 
+  changeFilterHandler(filter: FilterType) {
+    this.changeFilterEvent.emit(filter)
+  }
 }
