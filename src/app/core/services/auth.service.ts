@@ -11,9 +11,16 @@ export interface LoginRequestData {
   rememberMe: boolean
 }
 
+export interface MeResponse {
+  email: string
+  id: number
+  login: string
+}
+
 
 @Injectable()
 export class AuthService {
+  isAuth = false
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -36,9 +43,11 @@ export class AuthService {
   }
 
   me() {
-    this.http.get(`${environment.baseURL}/auth/me`)
+    this.http.get<CommonResponse<MeResponse>>(`${environment.baseURL}/auth/me`)
       .subscribe((res) => {
-        debugger
+        if(res.resultCode === ResultCodeEnum.success) {
+          this.isAuth = true
+        }
       })
   }
 }
