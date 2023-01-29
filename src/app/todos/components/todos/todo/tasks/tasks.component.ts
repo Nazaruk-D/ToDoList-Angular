@@ -5,6 +5,7 @@ import {Task, UpdateTaskModel} from "../../../../models/task.models";
 import {TodosService} from "../../../../services/todos.service";
 import {TaskStatusEnum} from "../../../../../core/enums/taskStatus.enum";
 
+
 @Component({
   selector: 'tl-tasks',
   templateUrl: './tasks.component.html',

@@ -1,11 +1,11 @@
 <div class="box">
   <div class="todos-header">
     <h1>Angular Todo</h1>
-    <button (click)="logoutHandler()">logout</button>
+    <button class="button" (click)="logoutHandler()">logout</button>
   </div>
   <div class="todos-input">
     <input class="input" type="text" placeholder="Add new Todo" [(ngModel)]="todoTitle">
-    <button (click)="addTodoHandler()">+</button>
+    <button class="button" (click)="addTodoHandler()">+</button>
   </div>
   <div class="todosBox">
     <tl-todo

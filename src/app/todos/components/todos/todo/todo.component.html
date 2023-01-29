@@ -4,7 +4,9 @@
     <ng-template #content>
       <b (dblclick)="activateEditModeHandler()"> {{todo.title}} </b>
     </ng-template>
-    <button (click)="removeTodoHandler()">delete</button>
+<!--    <button (click)="removeTodoHandler()">delete</button>-->
+    <img class="delete" src="../../../../../assets/deleteTodo.png" (click)="removeTodoHandler()" alt="deleteTodo">
+
   </div>
   <tl-tasks [todoId]="todo.id"></tl-tasks>
   <tl-todo-filters (changeFilterEvent)="changeFilter($event)" [filter]="todo.filter"></tl-todo-filters>
