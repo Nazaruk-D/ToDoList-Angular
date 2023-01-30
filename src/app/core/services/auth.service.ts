@@ -25,6 +25,7 @@ export class AuthService {
       .pipe(catchError(this.errorHandler.bind(this)))
       .subscribe((res) => {
         if(res.resultCode === ResultCodeEnum.success) {
+          debugger
           this.router.navigate(['/'])
         } else {
           this.notificationService.handleError(res.messages[0])
