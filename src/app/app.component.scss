@@ -1,7 +1,22 @@
-.bgi {
+.box {
   position: relative;
-  height: 100vh;
-  background: url("https://sun9-46.userapi.com/impg/v6n1lesA8Nu9HI0kHA_cqM3xJwfkv1SXoUcW-A/SJGP3JCJxtU.jpg?size=1024x1024&quality=95&sign=8a1a5e3e1e439389c5e144ae8dc9f4b7&type=album") no-repeat center center fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
   z-index: 0;
-  background-size: cover;
+
+
+  .backgroundImage {
+    position: fixed;
+    top: 0;
+    bottom:0;
+    left:0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    background: url("https://sun9-46.userapi.com/impg/v6n1lesA8Nu9HI0kHA_cqM3xJwfkv1SXoUcW-A/SJGP3JCJxtU.jpg?size=1024x1024&quality=95&sign=8a1a5e3e1e439389c5e144ae8dc9f4b7&type=album") no-repeat center center fixed;
+    background-size: cover;
+  }
 }
+

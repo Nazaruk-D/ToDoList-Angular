@@ -1,22 +1,31 @@
-<div class="box">
-  <h1>Login page</h1>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
-    <input type="text" formControlName="email" required
-           [ngClass]="{inputError: email!.invalid && (email!.dirty || email!.touched), inputSuccess: email!.valid}"/>
-    <div *ngIf="email!.invalid && (email!.dirty || email!.touched)" class="error">
-      <div *ngIf="email!.errors?.['required']">Email is required</div>
-      <div *ngIf="email!.errors?.['pattern']">Invalid email address</div>
-    </div>
+<div class="boxContainer">
+  <div class="box">
+    <h1 class="header">Login page</h1>
+    <p class="text"> To log in get registered here <br></p>
+    <p class="text">or use common test account credentials:<br></p>
+    <p class="text"> Email: <b>free@samuraijs.com</b> <br></p>
+    <p class="text"> Password: <b>free</b><br></p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+      <input class="input" type="text" formControlName="email" required placeholder="email"
+             [ngClass]="{inputError: email!.invalid && (email!.dirty || email!.touched), inputSuccess: email!.valid}"/>
+      <div *ngIf="email!.invalid && (email!.dirty || email!.touched)" class="error">
+        <div *ngIf="email!.errors?.['required']">Email is required</div>
+        <div *ngIf="email!.errors?.['pattern']">Invalid email address</div>
+      </div>
 
-    <input type="password" formControlName="password" required
-           [ngClass]="{inputError: password!.invalid && (password!.dirty || password!.touched), inputSuccess: password!.valid}"/>
-    <div *ngIf="password!.invalid && (password!.dirty || password!.touched)" class="error">
-      <div *ngIf="password!.errors?.['required']">Password is required.</div>
-      <div *ngIf="password!.errors?.['minLength']">Password must be at least 3 characters long</div>
-    </div>
+      <input class="input" type="password" formControlName="password" required placeholder="password"
+             [ngClass]="{inputError: password!.invalid && (password!.dirty || password!.touched), inputSuccess: password!.valid}"/>
+      <div *ngIf="password!.invalid && (password!.dirty || password!.touched)" class="error">
+        <div *ngIf="password!.errors?.['required']">Password is required.</div>
+        <div *ngIf="password!.errors?.['minLength']">Password must be at least 3 characters long</div>
+      </div>
+      <div>
+        Remember me
+        <input type="checkbox" formControlName="rememberMe">
+      </div>
 
-    <input type="checkbox" formControlName="rememberMe">
 
-    <button [disabled]="loginForm.invalid" type="submit">Sign in</button>
-  </form>
+      <button class="button" [disabled]="loginForm.invalid" type="submit">Sign in</button>
+    </form>
+  </div>
 </div>
